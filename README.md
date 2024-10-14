@@ -1,2 +1,7 @@
 # FourierDrawer
 Fourier Drawing Machine
+
+<div style="display: flex; justify-content: center;">
+    <img src="images/output.gif" width="300">
+
+</div>
