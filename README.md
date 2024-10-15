@@ -1,4 +1,9 @@
 # Note: ALl the gifs and images you see below are low resolution to fit within github's file preview size, to see the full animation of these, refer to these youtube links
+
+<div style="color: blue;">
+For an explanation of how it works, scroll to the bottom of this page or go to explain/1.png, 2.png, and 3.png.
+</div>
+
 ## YouTube Videos
 
 1. [Dragon](https://www.youtube.com/watch?v=8C18B097bbs)
