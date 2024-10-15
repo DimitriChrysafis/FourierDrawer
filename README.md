@@ -1,4 +1,4 @@
-# Note: ALl the gifs and images you see below are low resolution to fit with github, to see the full animation of these, refer to these youtube links
+# Note: ALl the gifs and images you see below are low resolution to fit within github's file preview size, to see the full animation of these, refer to these youtube links
 ## YouTube Videos
 
 1. [Dragon](https://www.youtube.com/watch?v=8C18B097bbs)
