@@ -1,5 +1,7 @@
 # Note: ALl the gifs and images you see below are low resolution to fit within github's file preview size, to see the full animation of these, refer to these youtube links
 
+## Note: the gifs might take a few secs to load in
+
 # For an explanation of how it works, scroll to the bottom of this page or go to explain/1.png, 2.png, and 3.png.
 
 ## YouTube Videos
