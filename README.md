@@ -8,7 +8,7 @@ Fourier Drawing Machine
 <div style="display: flex; justify-content: center; align-items: center; margin: 0; padding: 0;">
     <img src="images/output2.gif" width="300" style="margin: 0; padding: 0;">
     <img src="images/point2.jpg" width="200" style="margin: 0; padding: 0;">
-    <img src="images/image2.jpg" width="200" style="margin: 0; padding: 0;">
+    <img src="images/image2.jpg" width="150" style="margin: 0; padding: 0;">
 </div>
 
 
