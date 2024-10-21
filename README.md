@@ -1,4 +1,4 @@
-## An example youtube video with MAX resolution(the gifs shown below are heavily compressed to fit into github.
+
 
 ### Main idea (all circles rotate at the same speed and it's goal is to go through all of the points.
 
