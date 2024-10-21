@@ -1,8 +1,6 @@
-## YouTube Videos for MAX resolution
+## An example youtube video with MAX resolution(the gifs shown below are heavily compressed to fit into github.
 
 1. [Dragon](https://www.youtube.com/watch?v=8C18B097bbs)
-2. [A Face](https://www.youtube.com/watch?v=FxWh0C7bTS4)
-3. [A Body](https://www.youtube.com/watch?v=44Rb9387V88)
 
 ## Fourier Drawing Machine
 
