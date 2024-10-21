@@ -7,6 +7,13 @@
 ## Fourier Drawing Machine
 
 <div style="display: flex; justify-content: center; align-items: center; margin: 0; padding: 0;">
+    <img src="demos/yoshi/yoshi.gif" width="200" style="margin: 0; padding: 0;">
+    <img src="demos/yoshi/yoshi.jpg" width="200" height="150" style="margin: 0; padding: 0;">
+    <img src="demos/yoshi/yoshiraw.jpg" width="200" height="150" style="margin: 0; padding: 0;">
+</div>
+
+
+<div style="display: flex; justify-content: center; align-items: center; margin: 0; padding: 0;">
     <img src="demos/mario/mario.gif" width="400" height="300" style="margin: 0; padding: 0;">
     <img src="demos/mario/mario.jpg" width="200" height="150" style="margin: 0; padding: 0;">
     <img src="demos/mario/marioraw.jpg" width="200" height="150" style="margin: 0; padding: 0;">
@@ -18,11 +25,6 @@
     <img src="demos/dragon/dragonraw.jpg" width="200" height="150" style="margin: 0; padding: 0;">
 </div>
 
-<div style="display: flex; justify-content: center; align-items: center; margin: 0; padding: 0;">
-    <img src="demos/yoshi/yoshi.gif" width="300" style="margin: 0; padding: 0;">
-    <img src="demos/yoshi/yoshi.jpg" width="200" height="150" style="margin: 0; padding: 0;">
-    <img src="demos/yoshi/yoshiraw.jpg" width="200" height="150" style="margin: 0; padding: 0;">
-</div>
 
 
 
