@@ -1,5 +1,10 @@
 ## An example youtube video with MAX resolution(the gifs shown below are heavily compressed to fit into github.
 
+<div style="display: flex; justify-content: center; align-items: center; margin: 0; padding: 0;">
+    <img src="simpledemo.gif" width="300" style="margin: 0; padding: 0;">
+</div>
+
+
 1. [Dragon](https://www.youtube.com/watch?v=8C18B097bbs)
 
 ## Fourier Drawing Machine
