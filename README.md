@@ -13,7 +13,7 @@
 </div>
 
 <div style="display: flex; justify-content: center; align-items: center; margin: 0; padding: 0;">
-    <img src="demos/dragon/dragon.gif" width="400" height="300" style="margin: 0; padding: 0;">
+    <img src="demos/dragon/dragon.gif" width="400" style="margin: 0; padding: 0;">
     <img src="demos/dragon/dragon.jpg" width="200" height="150" style="margin: 0; padding: 0;">
     <img src="demos/dragon/dragonraw.jpg" width="200" height="150" style="margin: 0; padding: 0;">
 </div>
