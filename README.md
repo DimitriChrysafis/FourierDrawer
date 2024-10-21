@@ -15,7 +15,7 @@ Fourier Drawing Machine
 <div style="display: flex; justify-content: center; align-items: center; margin: 0; padding: 0;">
     <img src="demos/mario/mario.gif" width="300" style="margin: 0; padding: 0;">
     <img src="demos/mario/mario.jpg" width="300" style="margin: 0; padding: 0;">
-    <img src="demos/mario/marioraw.jpg" width="300" style="margin: 0; padding: 0;">
+    <img src="demos/mario/marioraw.jpg" width="300" height="100" style="margin: 0; padding: 0;">
 </div>
 
 
