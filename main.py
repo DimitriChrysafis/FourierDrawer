@@ -6,6 +6,9 @@ import numpy as np
 from concurrent.futures import ThreadPoolExecutor
 import threading
 from numba import njit
+import os, shutil; [shutil.rmtree('folder') if os.path.exists('folder') else None, os.makedirs('folder')]
+
+
 
 class FourierDrawingMachine:
     def __init__(self, points, highRes=True, speed=1, opacity=1.0):
@@ -17,9 +20,9 @@ class FourierDrawingMachine:
         self.totalFrames = len(self.points) * 100
         self.speed = speed
 
-        self.imageSize = (10000, 10000) if highRes else (5000, 5000)
+        self.imageSize = (10000, 10000) if highRes else (2000, 2000)
         self.opacity = int(opacity * 255)
-        self.output_dir = "/Volumes/LaCie/DrawingMachine/TestDemo/"
+        self.output_dir = "folder"
         os.makedirs(self.output_dir, exist_ok=True)
 
         self.center, self.squareSize = self.calculateBoundingBox()
@@ -33,7 +36,7 @@ class FourierDrawingMachine:
     def calculateBoundingBox(self):
         center = np.mean(self.orderedPoints, axis=0)
         distances = np.linalg.norm(self.orderedPoints - center, axis=1)
-        maxDistance = np.max(distances) * 1.0  # scale factor for the bounding box incase u pick bad points
+        maxDistance = np.max(distances) * 1.5  # scale factor for the bounding box incase u pick bad points
         return center, maxDistance
 
     @staticmethod
@@ -56,13 +59,13 @@ class FourierDrawingMachine:
                           int(arms[i - 1].imag * self.scale + self.centerShift[1]))
                 draw.ellipse([center[0] - radius, center[1] - radius,
                                center[0] + radius, center[1] + radius],
-                             outline=(102, 204, 102), width=10)
+                             outline=(102, 204, 102), width=2)
 
     def drawTrail(self, draw):
         for i in range(1, len(self.trailX)):
             draw.line([(self.trailX[i - 1], self.trailY[i - 1]),
                         (self.trailX[i], self.trailY[i])],
-                       fill=(204, 0, 102), width=5)
+                       fill=(0, 0, 255), width=4)
 
     def update(self, frame):
         img = Image.new('RGB', self.imageSize, (255, 255, 255))
@@ -72,7 +75,7 @@ class FourierDrawingMachine:
 
         lines = self.drawArmsStatic(arms, self.centerShift, self.scale)
         for prev, current in lines:
-            draw.line([prev, current], fill=(0, 102, 204), width=10)
+            draw.line([prev, current], fill=(0, 102, 204), width=0)
 
         self.drawCircles(draw, arms)
         endPoint = (int(arms[-1].real * self.scale + self.centerShift[0]),
@@ -90,7 +93,7 @@ class FourierDrawingMachine:
 
     def saveFrames(self):
         totalFramesAdjusted = int(self.totalFrames / self.speed)
-        with ThreadPoolExecutor(max_workers=14) as executor:  # Set to 14 threads
+        with ThreadPoolExecutor(max_workers=14) as executor:  # ur computer might be bad but i have 14 super powerful threads just lower it if u cant handle the energy
             list(tqdm(executor.map(self.update, range(totalFramesAdjusted)),
                        total=totalFramesAdjusted, desc="Saving frames"))
 
@@ -99,6 +102,11 @@ if __name__ == '__main__':
 
     with open('points.json', 'r') as f:
         data = json.load(f)
+
     points = np.array(data['points'])
-    machine = FourierDrawingMachine(points, highRes=True, speed=10)
+    machine = FourierDrawingMachine(points, highRes=False, speed=100)
     machine.saveFrames()
+
+    import subprocess;
+
+    subprocess.run(['python', 'intovid.py'])

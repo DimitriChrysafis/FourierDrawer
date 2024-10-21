@@ -11,29 +11,28 @@ pygame.init()
 W, H = 800, 600
 CX, CY = W // 2, H // 2
 J, I = "points.json", "/Users/dimitrichrysafis/Desktop/image.jpg"
-DENSITY = 10
+DENSITY = 1
 
-def init_json():
+def oiinnit():
     with open(J, 'w') as f:
         json.dump({"points": [], "tracing_mode": False}, f, indent=4)
 
-init_json()
+oiinnit()
 
 def L(): return json.load(open(J))
 
 def S(p): json.dump(p, open(J, 'w'), indent=4)
 
-def A(i, d=1):
-    img = io.imread(i)
-    gray_img = color.rgb2gray(img)
+def A(i,d=1):
+    img=io.imread(i)
+    if img.shape[2]==4:
+        img=img[:,:,:3]
+    gray_img=color.rgb2gray(img)
+    edges=cv2.Canny((gray_img*255).astype(np.uint8),100,200)
+    skeleton=skeletonize(edges>0)
+    pts=np.column_stack(np.where(skeleton>0))
+    return [[int(-(px-img.shape[1]//2)),int(-(img.shape[0]//2-py))] for idx,(py,px) in enumerate(pts) if idx%d==0]
 
-    edges = cv2.Canny((gray_img * 255).astype(np.uint8), 100, 200)
-    
-    # Thinning the edges to a single pixel width using skeletonize
-    skeleton = skeletonize(edges > 0)
-    
-    pts = np.column_stack(np.where(skeleton > 0))
-    return [[int(-(px - img.shape[1] // 2)), int(-(img.shape[0] // 2 - py))] for idx, (py, px) in enumerate(pts) if idx % d == 0]
 
 def M(p):
     if len(p) > 0:
