@@ -1,4 +1,4 @@
-### Main idea (all circles rotate at the same speed and it's goal is to go through all of the points.
+### Main idea (all circles rotate at the same speed and its goal is to go through all of the points.
 
 <div style="display: flex; justify-content: center; align-items: center; margin: 0; padding: 0;">
     <img src="simpledemo.gif" width="500" style="margin: 0; padding: 0;">
