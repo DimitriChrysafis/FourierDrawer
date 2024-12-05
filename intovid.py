@@ -110,7 +110,7 @@ class V:
         )
         print(f"cropped GIF saved: {output_cropped_gif_name}")
 
-    def spedgif(self, frames, speedfactror=5):
+    def spedgif(self, frames, speedfactror=100):
         NAMEEEEE = self.compressed_gif_name.replace('.gif', '_cropped_sped_up.gif')
         SPEDDD = frames
         FRIATIONNNDJHLKDSHFDSJF = 100 // speedfactror
@@ -126,7 +126,7 @@ class V:
 
 
 if __name__ == '__main__':
-    d = "folder"
+    d = "/Users/dimitrichrysafis/Desktop/Anim/"
 
     v = V(d, f=60)
     v.r(w=16)

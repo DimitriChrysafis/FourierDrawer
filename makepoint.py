@@ -6,6 +6,8 @@ import matplotlib.pyplot as plt
 from skimage.morphology import skeletonize
 from skimage import io, color
 
+# All of this paraphenilia is just
+
 pygame.init()
 
 W, H = 800, 600
@@ -37,7 +39,9 @@ def A(i,d=1):
 def M(p):
     if len(p) > 0:
         plt.scatter([pt[0] for pt in p], [pt[1] for pt in p], s=1)
+        # FLIP across y-axis fbecause for some reason it's only working with this.
         plt.gca().invert_yaxis()
+
         plt.show()
 
 s = pygame.display.set_mode((W, H))
@@ -72,12 +76,14 @@ while r:
             S(P)
 
     s.fill((255, 10, 255))
+    # i wrote this while not understanding anything dont ask me debut
     if layer_img and img:
         ir, sf = img.get_rect(), min(W / img.get_width(), H / img.get_height())
         nw, nh = int(ir.width * sf), int(ir.height * sf)
         s.blit(pygame.transform.scale(img, (nw, nh)), ((CX - nw // 2), (CY - nh // 2)))
     for p in P["points"]:
         pygame.draw.circle(s, (0, 0, 0), (p[0] + CX, CY - p[1]), 1)
+    # inversion
     pygame.display.flip()
 
 pygame.quit()

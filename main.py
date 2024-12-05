@@ -20,9 +20,9 @@ class FourierDrawingMachine:
         self.totalFrames = len(self.points) * 100
         self.speed = speed
 
-        self.imageSize = (10000, 10000) if highRes else (2000, 2000)
+        self.imageSize = (9000, 9000) if highRes else (2000, 2000)
         self.opacity = int(opacity * 255)
-        self.output_dir = "folder"
+        self.output_dir = "/Users/dimitrichrysafis/Desktop/Anim/"
         os.makedirs(self.output_dir, exist_ok=True)
 
         self.center, self.squareSize = self.calculateBoundingBox()
@@ -59,12 +59,16 @@ class FourierDrawingMachine:
                           int(arms[i - 1].imag * self.scale + self.centerShift[1]))
                 draw.ellipse([center[0] - radius, center[1] - radius,
                                center[0] + radius, center[1] + radius],
+                             # COMMENT FOR MYSELF SO I CAN COMMAND SEARCH FOR COMMENTS
+                             # I JUST WANT TO EASILY BE ABLE TO EDIT THE WIDTH OF SOME SHAPES
+                             # COLOR EDITOR
                              outline=(102, 204, 102), width=2)
 
     def drawTrail(self, draw):
         for i in range(1, len(self.trailX)):
             draw.line([(self.trailX[i - 1], self.trailY[i - 1]),
                         (self.trailX[i], self.trailY[i])],
+                      ### AHHHHH PURPLE
                        fill=(0, 0, 255), width=4)
 
     def update(self, frame):
@@ -93,7 +97,10 @@ class FourierDrawingMachine:
 
     def saveFrames(self):
         totalFramesAdjusted = int(self.totalFrames / self.speed)
-        with ThreadPoolExecutor(max_workers=14) as executor:  # ur computer might be bad but i have 14 super powerful threads just lower it if u cant handle the energy
+        # Threadpool thing for parralelization of saving so it saves faster
+        # im unsure how to get the usemaxthreads anyway
+        with ThreadPoolExecutor(max_workers=14) as executor:
+            # ur computer might be bad but i have 14 super powerful threads just lower it if u cant handle the energy
             list(tqdm(executor.map(self.update, range(totalFramesAdjusted)),
                        total=totalFramesAdjusted, desc="Saving frames"))
 
@@ -104,7 +111,10 @@ if __name__ == '__main__':
         data = json.load(f)
 
     points = np.array(data['points'])
-    machine = FourierDrawingMachine(points, highRes=False, speed=100)
+    machine = FourierDrawingMachine(points, highRes=True, speed=100)
+    # Modify speed as you wish to be able to have precision be higher or lower
+    # lower speed higher accuracy
+
     machine.saveFrames()
 
     import subprocess;
