@@ -34,8 +34,5 @@
     <img src="demos/dragon/dragonraw.jpg" width="180" height="180" style="margin: 0; padding: 0;">
 </div>
 
-## Images
 
-![Explain 1](explain/1.png)
-![Explain 2](explain/2.png)
 
