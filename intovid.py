@@ -18,6 +18,7 @@ class V:
         self._g()
 
     def n(self):
+        # random name for the file lmao
         return 'VIDEO_' + ''.join(random.choices('abcdefghijklmnopqrstuvwxyz0123456789', k=16)) + ".mp4"
 
     def _g(self):
@@ -39,7 +40,7 @@ class V:
         t = len(self.l)
         img = Image.open(self.l[0])
         r = img.size
-
+        # lmao yes its ffmpeg
         cmd = [
             'ffmpeg', '-framerate', str(self.f), '-i',
             os.path.join(self.d, 'frame_%08d.jpg'),
@@ -48,6 +49,7 @@ class V:
         ]
 
         start_time = time.time()
+        # gah
         with tqdm(total=t, desc="Creating Video") as pbar:
             p = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
             for line in iter(p.stdout.readline, b''):
@@ -110,7 +112,7 @@ class V:
         )
         print(f"cropped GIF saved: {output_cropped_gif_name}")
 
-    def spedgif(self, frames, speedfactror=5):
+    def spedgif(self, frames, speedfactror=100):
         NAMEEEEE = self.compressed_gif_name.replace('.gif', '_cropped_sped_up.gif')
         SPEDDD = frames
         FRIATIONNNDJHLKDSHFDSJF = 100 // speedfactror
@@ -126,7 +128,7 @@ class V:
 
 
 if __name__ == '__main__':
-    d = "folder"
+    d = "/Users/dimitrichrysafis/Desktop/Anim/"
 
     v = V(d, f=60)
     v.r(w=16)

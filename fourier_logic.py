@@ -1,16 +1,20 @@
 import numpy as np
 from scipy.spatial.distance import cdist
+from tqdm import tqdm
 
 class FourierTransform:
     @staticmethod
     def dft(points):
         N = len(points)
         fourierCoeffs = np.zeros(N, dtype=np.complex64)
-        for k in range(-N // 2, N // 2):
+        
+        # Add tqdm progress bar to the loop over k values
+        for k in tqdm(range(-N // 2, N // 2), desc="Calculating Fourier Coefficients"):
             sumValue = 0
             for n in range(N):
                 sumValue += points[n] * np.exp(-2j * np.pi * k * n / N)
             fourierCoeffs[k + N // 2] = sumValue / N
+        
         return fourierCoeffs
 
     @staticmethod
