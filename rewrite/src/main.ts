@@ -52,7 +52,6 @@ app.innerHTML = `
           <span class="zoom-pulse-ring zoom-pulse-ring--two"></span>
         </div>
       </div>
-      <div class="zoom-label">SCROLL TO ZOOM</div>
     </div>
   </div>
 `
