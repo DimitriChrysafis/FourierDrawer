@@ -1,0 +1,140 @@
+:root {
+  background: #ffffff;
+  color: #000000;
+  font-family: 'SFMono-Regular', 'Menlo', 'Monaco', 'Courier New', monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#app {
+  margin: 0;
+  min-height: 100%;
+}
+
+body {
+  background: #ffffff;
+  overflow: hidden;
+}
+
+.shell {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background: #ffffff;
+}
+
+.stage {
+  position: absolute;
+  inset: 0;
+}
+
+.stage canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.zoom-hint {
+  position: absolute;
+  top: 18px;
+  left: 50%;
+  z-index: 2;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 220px;
+  height: 64px;
+  padding: 0 14px;
+  border: 2px solid #000000;
+  background: #ffffff;
+  pointer-events: none;
+}
+
+.zoom-gesture {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  height: 100%;
+}
+
+.zoom-mouse {
+  position: relative;
+  width: 20px;
+  height: 32px;
+  border: 2px solid #000000;
+  border-radius: 12px;
+  flex: 0 0 auto;
+}
+
+.zoom-mouse-notch {
+  position: absolute;
+  left: 50%;
+  top: 5px;
+  width: 2px;
+  height: 9px;
+  background: #000000;
+  transform: translateX(-50%);
+}
+
+.zoom-motion {
+  position: relative;
+  width: 10px;
+  height: 30px;
+  flex: 0 0 auto;
+}
+
+.zoom-arrow {
+  position: absolute;
+  left: 50%;
+  width: 8px;
+  height: 8px;
+  border-left: 2px solid #000000;
+  border-top: 2px solid #000000;
+}
+
+.zoom-arrow--up {
+  top: 1px;
+  transform: translateX(-50%) rotate(45deg);
+}
+
+.zoom-arrow--down {
+  bottom: 1px;
+  transform: translateX(-50%) rotate(225deg);
+}
+
+.zoom-pulse {
+  position: relative;
+  width: 24px;
+  height: 24px;
+  flex: 0 0 auto;
+}
+
+.zoom-pulse-ring {
+  position: absolute;
+  inset: 0;
+  border: 2px solid #000000;
+  border-radius: 999px;
+}
+
+.zoom-pulse-ring--one {
+  transform: scale(0.54);
+}
+
+.zoom-pulse-ring--two {
+  transform: scale(1);
+}
+
+.zoom-label {
+  font-size: 11px;
+  line-height: 1;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
