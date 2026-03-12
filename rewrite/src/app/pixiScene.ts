@@ -126,6 +126,10 @@ export class FourierScene {
     return Math.max(minWidth, baseWidth / Math.pow(Math.max(1, this.currentZoom), power))
   }
 
+  private arrowZoomWidth(baseWidth: number, minWidth: number, power = 0.5) {
+    return Math.max(minWidth, baseWidth / Math.pow(Math.max(1, this.currentZoom), power))
+  }
+
   private applyCamera(force: boolean) {
     const hostWidth = this.host.clientWidth || window.innerWidth || 1
     const hostHeight = this.host.clientHeight || window.innerHeight || 1
@@ -239,7 +243,7 @@ export class FourierScene {
     this.epicycleLayer.lineTo(endX, endY)
     this.epicycleLayer.stroke({ color, width, alpha: 1 })
 
-    const arrowLength = this.zoomWidth(Math.min(8.5, 0.7 + length * 0.16), 0.08, 1.08)
+    const arrowLength = this.arrowZoomWidth(Math.min(8.5, 0.7 + length * 0.16), 0.22, 0.46)
     const arrowSpread = arrowLength * 0.34
     const ux = dx / length
     const uy = dy / length
@@ -254,7 +258,7 @@ export class FourierScene {
     this.epicycleLayer.moveTo(leftX, leftY)
     this.epicycleLayer.lineTo(endX, endY)
     this.epicycleLayer.lineTo(rightX, rightY)
-    this.epicycleLayer.stroke({ color, width: this.zoomWidth(width * 0.92, 0.012, 1.04), alpha: 1 })
+    this.epicycleLayer.stroke({ color, width: this.arrowZoomWidth(width * 0.92, 0.028, 0.42), alpha: 1 })
   }
 
   private render(deltaSeconds: number) {
